@@ -3,6 +3,6 @@
 /config/*
 /data/*
 /logs/*
-/www/**
+/www_org/**
 .DS_Store
 /buildtest
