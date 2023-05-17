@@ -1325,7 +1325,7 @@ window.scwEvents = window.scwEvents || {};
 			SEMICOLON.widget.textRotator();
 			SEMICOLON.widget.carousel();
 			SEMICOLON.widget.linkScroll();
-			SEMICOLON.widget.ajaxForm();
+			// SEMICOLON.widget.ajaxForm();
 			SEMICOLON.widget.subscription();
 			SEMICOLON.widget.shapeDivider();
 			SEMICOLON.widget.stickySidebar();

@@ -26,7 +26,7 @@ abstract class BaseController extends Controller
      *
      * @var CLIRequest|IncomingRequest
      */
-    protected $request;
+    protected $request, $session;
 
     /**
      * An array of helpers to be loaded automatically upon
@@ -35,7 +35,17 @@ abstract class BaseController extends Controller
      *
      * @var array
      */
-    protected $helpers = [];
+    protected $helpers = [
+        'session',
+        'form',
+        'formulate',
+        'filesystem',
+        'auth',
+        'url',
+        'text_format',
+        'cookie'
+    ];
+    protected $data_to_views = [];
 
     /**
      * Be sure to declare properties for any property fetch you initialized.
@@ -52,7 +62,45 @@ abstract class BaseController extends Controller
         parent::initController($request, $response, $logger);
 
         // Preload any models, libraries, etc, here.
+        $this->session = \Config\Services::session();
+        if (isset($_SESSION['mail_msg'])) {
+            $this->data_to_views['flash_data'] = $this->session->getFlashdata();
+        }
+    }
 
-        // E.g.: $this->session = \Config\Services::session();
+    public function send_email($att, $is_admin_email = false)
+    {
+        // need to always send NAME, EMAIL and MESSAGE
+        $email = \Config\Services::email();
+
+
+        if (isset($att['to'])) {
+            $to = $att['to'];
+        } else {
+            $to = 'johan.havenga@gmail.com';
+            // $to = 'bestuurshoof@uitsigkleuterskool.co.za';
+        }
+        if (isset($att['subject'])) {
+            $subject = $att['subject'];
+        } else {
+            $subject = 'Website Contact: ' . $att['name'];
+        }
+
+        $email->setTo($to);
+
+        $email->setCC('johan.havenga@gmail.com');
+        $email->setFrom($att['email'], $att['name']);
+        $email->setReplyTo($att['email'], $att['name']);
+
+        $email->setSubject($subject);
+        $email->setMessage($att['message']);
+
+        if ($email->send()) {
+            return true;
+        } else {
+            $data = $email->printDebugger(['headers']);
+            // dd($data);
+            return false;
+        }
     }
 }
