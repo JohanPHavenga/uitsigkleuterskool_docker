@@ -11,6 +11,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
+    <link rel="apple-touch-icon" sizes="180x180" href="<?= base_url('img/favicon/apple-touch-icon.png'); ?>">
+    <link rel="icon" type="image/png" sizes="32x32" href="<?= base_url('img/favicon/favicon-32x32.png'); ?>">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?= base_url('img/favicon/favicon-16x16.png'); ?>">
+    <link rel="manifest" href="<?= base_url('img/favicon/site.webmanifest'); ?>">
+
     <link rel="stylesheet" href="<?= base_url('css/bootstrap.css'); ?>" type="text/css" />
     <link rel="stylesheet" href="<?= base_url('style.css'); ?>" type="text/css" />
     <link rel="stylesheet" href="<?= base_url('css/swiper.css'); ?>" type="text/css" />
@@ -58,15 +63,15 @@
 
                     <div class="masonry-thumbs grid-container grid-4" data-big="4" data-lightbox="gallery">
                         <?php
-                            foreach ($file_map as $file) {
-                                echo "<a class='grid-item' href='".base_url('img/gallery/' . $gallery . '/full/'.$file)."' data-lightbox='gallery-item'><img src='".base_url('img/gallery/' . $gallery . '/thumb/'.$file)."' alt='Foto'></a>";
-                            }
+                        foreach ($file_map as $file) {
+                            echo "<a class='grid-item' href='" . base_url('img/gallery/' . $gallery . '/full/' . $file) . "' data-lightbox='gallery-item'><img src='" . base_url('img/gallery/' . $gallery . '/thumb/' . $file) . "' alt='Foto'></a>";
+                        }
                         ?>
                     </div>
                 </div>
                 <div class="shape-divider" data-shape="wave-5" data-position="bottom" data-height="60"></div>
-                <div class="container z-3" style="padding: 40px 0;" >
-                    <a class="btn text-white bg-color rounded-1 py-3 px-5 fw-medium float-end" href="<?=base_url('#fotos');?>"><i class="icon-line-arrow-left position-relative" style="top: 2px"></i> Terug</a>
+                <div class="container z-3" style="padding: 40px 0;">
+                    <a class="btn text-white bg-color rounded-1 py-3 px-5 fw-medium float-end" href="<?= base_url('#fotos'); ?>"><i class="icon-line-arrow-left position-relative" style="top: 2px"></i> Terug</a>
                 </div>
             </div>
 

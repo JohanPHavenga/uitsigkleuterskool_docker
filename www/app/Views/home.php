@@ -11,6 +11,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
+    <link rel="apple-touch-icon" sizes="180x180" href="<?= base_url('img/favicon/apple-touch-icon.png');?>">
+    <link rel="icon" type="image/png" sizes="32x32" href="<?= base_url('img/favicon/favicon-32x32.png');?>">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?= base_url('img/favicon/favicon-16x16.png');?>">
+    <link rel="manifest" href="<?= base_url('img/favicon/site.webmanifest');?>">
+
     <link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
     <link rel="stylesheet" href="style.css" type="text/css" />
     <link rel="stylesheet" href="css/swiper.css" type="text/css" />
@@ -638,7 +643,7 @@
                                             <div class="posts-md">
                                                 <div class="entry">
                                                     <div class="entry-image position-relative mb-md-4">
-                                                        <a href="<?=base_url('gallery/klasse');?>">
+                                                        <a href="<?= base_url('gallery/klasse'); ?>">
                                                             <img src="img/fotos/thumb/IMG-20230216-WA0005.webp" alt="Image 3" class="rounded-5">
                                                             <div class="shape-divider" data-shape="wave-5" data-position="bottom" data-width="110" data-height="30" data-fill="#ECF4F1"></div>
                                                         </a>
@@ -656,7 +661,7 @@
                                             <div class="posts-md">
                                                 <div class="entry">
                                                     <div class="entry-image position-relative mb-md-4">
-                                                        <a href="<?=base_url('gallery/speelgronde');?>">
+                                                        <a href="<?= base_url('gallery/speelgronde'); ?>">
                                                             <img src="img/fotos/thumb/IMG-20230216-WA0012.webp" alt="Image 3" class="rounded-5">
                                                             <div class="shape-divider" data-shape="wave-5" data-position="bottom" data-width="110" data-height="30" data-fill="#ECF4F1"></div>
                                                         </a>
@@ -674,7 +679,7 @@
                                             <div class="posts-md">
                                                 <div class="entry">
                                                     <div class="entry-image position-relative mb-md-4">
-                                                        <a href="<?=base_url('gallery/pret');?>">
+                                                        <a href="<?= base_url('gallery/pret'); ?>">
                                                             <img src="img/fotos/thumb/Collage_2023-05-03_17_00_33.webp" alt="Image 3" class="rounded-5">
                                                             <div class="shape-divider" data-shape="wave-5" data-position="bottom" data-width="110" data-height="30" data-fill="#ECF4F1"></div>
                                                         </a>
