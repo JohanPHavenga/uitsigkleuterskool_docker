@@ -77,8 +77,8 @@ abstract class BaseController extends Controller
         if (isset($att['to'])) {
             $to = $att['to'];
         } else {
-            $to = 'johan.havenga@gmail.com';
-            // $to = 'bestuurshoof@uitsigkleuterskool.co.za';
+            // $to = 'johan.havenga@gmail.com';
+            $to = 'bestuurshoof@uitsigkleuterskool.co.za';
         }
         if (isset($att['subject'])) {
             $subject = $att['subject'];
@@ -89,7 +89,8 @@ abstract class BaseController extends Controller
         $email->setTo($to);
 
         $email->setCC('johan.havenga@gmail.com');
-        $email->setFrom($att['email'], $att['name']);
+        // $email->setFrom($att['email'], $att['name']);
+        $email->setFrom('webmaster@uitsigkleuterskool.co.za', $att['name']);
         $email->setReplyTo($att['email'], $att['name']);
 
         $email->setSubject($subject);
@@ -99,7 +100,7 @@ abstract class BaseController extends Controller
             return true;
         } else {
             $data = $email->printDebugger(['headers']);
-            // dd($data);
+            dd($data);
             return false;
         }
     }
